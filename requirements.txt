@@ -3,5 +3,6 @@ opencv-python-headless
 ultralytics
 pillow
 scikit-learn
+scikit-image
 streamlit
 streamlit_image_coordinates
