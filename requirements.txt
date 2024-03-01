@@ -1,6 +1,5 @@
 torch==2.2.1
 opencv-contrib-python==4.5.5.62
-
 ultralytics
 pillow
 scikit-learn
