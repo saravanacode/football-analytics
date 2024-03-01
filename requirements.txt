@@ -1,5 +1,6 @@
 torch==2.2.1
-opencv-python-headless==4.5.4.60
+opencv-contrib-python==4.5.5.62
+opencv-python
 ultralytics
 pillow
 scikit-learn
