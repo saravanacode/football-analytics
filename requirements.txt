@@ -5,3 +5,4 @@ pillow
 skimage
 scikit-learn
 streamlit
+streamlit_image_coordinates
