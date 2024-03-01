@@ -1,6 +1,6 @@
-torch
+torch==2.2.1
+opencv-python==4.9.0.80
 ultralytics
-python-opencv
 pillow
 skimage
 scikit-learn
