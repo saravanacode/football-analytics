@@ -1,2 +1,2 @@
-libgl1-mesa-glx
-python3-opencv 
+libgl1
+python3-opencv
