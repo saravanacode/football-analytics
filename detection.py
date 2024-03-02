@@ -80,7 +80,7 @@ def detect(cap, stframe, output_file_name, save_output, model_players, model_key
         output_file_name = generate_file_name()
 
     # Read tactical map image
-    tac_map = cv2.imread('../tactical map.jpg')
+    tac_map = cv2.imread('tactical map.jpg')
     tac_width = tac_map.shape[0]
     tac_height = tac_map.shape[1]
     
