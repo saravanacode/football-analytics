@@ -17,18 +17,18 @@ import time
 
 def get_labels_dics():
     # Get tactical map keypoints positions dictionary
-    json_path = "../pitch map labels position.json"
+    json_path = "pitch map labels position.json"
     with open(json_path, 'r') as f:
         keypoints_map_pos = json.load(f)
 
     # Get football field keypoints numerical to alphabetical mapping
-    yaml_path = "../config pitch dataset.yaml"
+    yaml_path = "config pitch dataset.yaml"
     with open(yaml_path, 'r') as file:
         classes_names_dic = yaml.safe_load(file)
     classes_names_dic = classes_names_dic['names']
 
     # Get football field keypoints numerical to alphabetical mapping
-    yaml_path = "../config players dataset.yaml"
+    yaml_path = "config players dataset.yaml"
     with open(yaml_path, 'r') as file:
         labels_dic = yaml.safe_load(file)
     labels_dic = labels_dic['names']
