@@ -5,6 +5,7 @@ import streamlit as st
 
 
 import cv2
+from pathlib import Path
 import skimage
 from PIL import Image, ImageColor
 from ultralytics import YOLO
@@ -61,6 +62,7 @@ def generate_file_name():
 def detect(cap, stframe, output_file_name, save_output, model_players, model_keypoints,
             hyper_params, ball_track_hyperparams, plot_hyperparams, num_pal_colors, colors_dic, color_list_lab):
 
+
     show_k = plot_hyperparams[0]
     show_pal = plot_hyperparams[1]
     show_b = plot_hyperparams[2]
@@ -78,6 +80,7 @@ def detect(cap, stframe, output_file_name, save_output, model_players, model_key
 
     if (output_file_name is not None) and (len(output_file_name)==0):
         output_file_name = generate_file_name()
+
 
     # Read tactical map image
     tac_map = cv2.imread('tactical map.jpg')
@@ -385,7 +388,20 @@ def detect(cap, stframe, output_file_name, save_output, model_players, model_key
             #cv2.imshow("YOLOv8 Inference", frame)
             if save_output:
                 output.write(cv2.resize(final_img, (width, height)))
+    if save_output:
+        output.release()
+        st.success(f"Output video saved as {output_file_name}.mp4")
 
+        # Add a download link to the saved video file
+        video_file_path = f"./outputs/{output_file_name}.mp4"
+        with open(video_file_path, "rb") as f:
+            video_bytes = f.read()
+        st.download_button(
+            label="Download Video",
+            data=video_bytes,
+            file_name=f"{output_file_name}.mp4",
+            mime="video/mp4"
+        )
 
     # Remove progress bar and return        
     st_prog_bar.empty()
